@@ -4,12 +4,16 @@ pipeline {
             label 'Agent-1'
         }
     }
+    environment {
+        BUILD_ENV = 'production'
+    }
     stages {
         stage('Build') {
             steps {
                 script{
                     sh """
                     echo "Running build script..."
+                    echo "Build environment: ${BUILD_ENV}"
                     """
                 }
             }
