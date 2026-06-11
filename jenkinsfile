@@ -17,6 +17,7 @@ pipeline {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'staging', 'production'], description: 'Target environment')
         password(name: 'API_TOKEN', defaultValue: '', description: 'Enter temporary API token')
     }
+    // This is a sample Jenkins pipeline that demonstrates the use of parameters, environment variables, and stages. It includes a build stage, a test stage, and a deploy stage. The pipeline also has post actions to handle different outcomes of the pipeline execution.
     stages {
         stage('Build') {
             steps {
