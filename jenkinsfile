@@ -11,6 +11,12 @@ pipeline {
         timeout(time: 10, unit: 'SECONDS')
         disableConcurrentBuilds()
     }
+    parameters {
+        string(name: 'DEPLOY_BRANCH', defaultValue: 'main', description: 'Branch to deploy')
+        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Check to run unit tests')
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'staging', 'production'], description: 'Target environment')
+        password(name: 'API_TOKEN', defaultValue: '', description: 'Enter temporary API token')
+    }
     stages {
         stage('Build') {
             steps {
