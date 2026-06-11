@@ -17,7 +17,7 @@ pipeline {
                     sh """
                     echo "Running build script..."
                     echo "Build environment: ${BUILD_ENV}"
-                    sleep 10
+                    #sleep 10
                     """
                 }
             }
